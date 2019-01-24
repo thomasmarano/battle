@@ -1,2 +1,6 @@
-<h1>You have attacked <%=@player2.name%>!</h1>
-<h2><%=@player2.name%>'s hit points now equal <%=@player2.hit_points%>
+<h1>You have attacked <%=@game.player_2.name%>!</h1>
+<h2><%=@game.player_2.name%>'s hit points now equal <%=@game.player_2.hit_points%>
+
+  <form action="/player-two-attack" method="get">
+      <input type="submit" value="Attack Player 1"/>
+  </form>
