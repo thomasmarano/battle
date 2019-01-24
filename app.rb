@@ -1,10 +1,6 @@
 require 'sinatra/base'
 
 class Battle < Sinatra::Base
-    # get '/' do
-    #     "Testing infrastructure working!"
-    # end
-
     get '/' do
       erb (:index)
     end
@@ -21,6 +17,11 @@ enable :sessions
       @player1_name = session[:player1_name]
       @player2_name = session[:player2_name]
       erb (:play)
+    end
+
+    get '/attack' do
+      @player2_name = session[:player2_name]
+      erb (:attack)
     end
 
     run! if app_file == $0
